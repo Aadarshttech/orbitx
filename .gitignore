@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment & Secrets
+.env
+.env.local
+
+# Campaign state and session data (Keep data/templates tracked)
+data/queue/
+data/queue.json
+data/history.json
+data/analytics.json
+data/session/
+!data/templates/
+
+# Browser automation & logs
+.playwright/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and Temp files
+.DS_Store
+Thumbs.db
+scratch/
