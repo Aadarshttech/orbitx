@@ -1,0 +1,18 @@
+[
+  {
+    "id": "tech_viral_1",
+    "template": "Optimize {topic} in production:\n\n1. Use {tool} for the heavy lifting.\n2. Cache aggressively. Not caching? You're burning money.\n3. Keep state simple.\n\nWhat's your go-to {topic} stack? 👇"
+  },
+  {
+    "id": "tech_viral_2",
+    "template": "Stop using the default setup for {topic}.\n\nYou are leaking memory.\n\nOld way: 500 lines of boilerplate.\nNew way: 50 lines using {topic} abstractions.\n\nLess code = fewer bugs.\n\nHave you made the switch?"
+  },
+  {
+    "id": "tech_viral_3",
+    "template": "Everyone says {topic} is the future.\n\nAfter 3 apps, I disagree.\n\nThe bottleneck isn't the API. It's your indices.\n\nWe switched to a vector-first approach and query times dropped by 400ms.\n\nBookmark this. 🔖"
+  },
+  {
+    "id": "tech_viral_4",
+    "template": "The hardest part of {topic}?\n\nScaling it.\n\nHere is the fix:\n\nWhat used to take a whole DevOps team can now be done in 3 CLI commands using {tool}.\n\nStuck? Drop your error below. 👇"
+  }
+]

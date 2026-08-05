@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ai_viral_1",
+    "template": "I spent 30 days analyzing {topic}.\n\nIt's not about automation. It's about augmentation.\n\nRelying 100% on {topic} makes you generic.\n\nBut using {tool} to speed up drafts by 80%?\n\nYou win.\n\nHow do you integrate it?"
+  },
+  {
+    "id": "ai_viral_2",
+    "template": "The biggest lie in AI?\n\nThat {topic} will replace developers.\n\n{tool} is just raising the baseline of what 1 dev can build in a weekend.\n\nMaster {topic} and get the leverage of a 10-person team.\n\nAdapt or get left behind."
+  },
+  {
+    "id": "ai_viral_3",
+    "template": "Most people use {topic} wrong.\n\nThey treat it like a search engine.\n\nTreat it like a reasoning engine.\n\nStop asking {tool} for facts. Give it complex logic puzzles and constraints.\n\nThat's the real magic of {topic}."
+  },
+  {
+    "id": "ai_viral_4",
+    "template": "The biggest problem with {topic}?\n\nScaling without hitting limits.\n\nWe kept hitting rate limits with {tool} and stalled.\n\nSo we cut complex parsing and let {topic} handle unstructured data directly.\n\nTime dropped 60%.\n\nBookmark this. 🔖"
+  }
+]
