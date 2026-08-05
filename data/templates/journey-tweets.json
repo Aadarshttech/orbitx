@@ -1,0 +1,65 @@
+[
+  {
+    "id": "journey_day_progress",
+    "template": "Day {day}/100 🤖\n\nToday I learned:\n\n{lesson}\n\n{takeaway}\n\nSmall steps. Big progress.\n\n#100DaysOfAI {hashtag}",
+    "variables": ["day", "lesson", "takeaway", "hashtag"],
+    "pillar": "learning_journey"
+  },
+  {
+    "id": "journey_milestone",
+    "template": "🎯 Day {day}/100 milestone!\n\n{milestone}\n\nWhat it took:\n→ {effort_1}\n→ {effort_2}\n→ {effort_3}\n\nConsistency > Motivation.\n\n#BuildInPublic",
+    "variables": ["day", "milestone", "effort_1", "effort_2", "effort_3"],
+    "pillar": "learning_journey"
+  },
+  {
+    "id": "journey_struggle",
+    "template": "Day {day}/100\n\nToday was rough.\n\n{struggle}\n\nBut I showed up.\n\nThat's what matters.\n\n#100DaysOfAI",
+    "variables": ["day", "struggle"],
+    "pillar": "learning_journey"
+  },
+  {
+    "id": "journey_til",
+    "template": "Day {day}/100 — TIL:\n\n{til}\n\n{explanation}\n\nThe more I learn, the more I realize I don't know.\n\n{hashtag}",
+    "variables": ["day", "til", "explanation", "hashtag"],
+    "pillar": "learning_journey"
+  },
+  {
+    "id": "journey_project_update",
+    "template": "Day {day}/100 — Project update\n\n✅ {done}\n🔄 {in_progress}\n📋 {next}\n\nBuilding in public hits different.\n\n#BuildInPublic",
+    "variables": ["day", "done", "in_progress", "next"],
+    "pillar": "learning_journey"
+  },
+  {
+    "id": "journey_reflection",
+    "template": "Day {day}/100 — Reflection\n\nWeek {week} done.\n\nBiggest win: {win}\nBiggest challenge: {challenge}\nKey lesson: {lesson}\n\nOnward 🚀\n\n#100DaysOfAI",
+    "variables": ["day", "week", "win", "challenge", "lesson"],
+    "pillar": "learning_journey"
+  },
+  {
+    "id": "journey_resource_share",
+    "template": "Day {day}/100\n\nBest resource I found this week:\n\n{resource}\n\nWhy it's good:\n{why}\n\nBookmark this 🔖\n\n#100DaysOfAI",
+    "variables": ["day", "resource", "why"],
+    "pillar": "learning_journey"
+  },
+  {
+    "id": "journey_before_after",
+    "template": "Day {day}/100\n\nMe on Day 1: {before}\n\nMe now: {after}\n\nThe transformation is real.\n\nKeep going 💪\n\n#BuildInPublic",
+    "variables": ["day", "before", "after"],
+    "pillar": "learning_journey"
+  },
+  {
+    "id": "journey_cv_1",
+    "template": "Day {day}/100\n\nA lot of people ask how I broke into AI research.\n\nBuild in public.\n\nI shipped 'Smart NID Helper' to solve a real local problem.\n\nI documented the whole process.\n\nDon't just research. Deploy.",
+    "linkId": "github_profile"
+  },
+  {
+    "id": "journey_cv_2",
+    "template": "Day {day}/100\n\nBuilding ML systems is 80% data and deployment.\n\nWhen I built the Drone Image Landcover pipeline, training DeepLab v3 was the easy part.\n\nGIS preprocessing? Absolute nightmare.\n\nLearn the plumbing.",
+    "linkId": "github_profile"
+  },
+  {
+    "id": "journey_cv_3",
+    "template": "Day {day}/100\n\nAccessibility tech is why I love computer vision.\n\nI built a real-time Webcam Eye-Tracking system using MediaPipe.\n\nNow, users with severe motor disabilities can control their OS hands-free.",
+    "linkId": "github_profile"
+  }
+]

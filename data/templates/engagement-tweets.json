@@ -1,0 +1,62 @@
+[
+  {
+    "id": "engage_question",
+    "template": "Honest question:\n\n{question}\n\nI'll go first: {my_answer}\n\nYour turn 👇",
+    "variables": ["question", "my_answer"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_hot_take",
+    "template": "Hot take:\n\n{take}\n\n{explanation}\n\nFight me on this. 👇\n\n{hashtag}",
+    "variables": ["take", "explanation", "hashtag"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_unpopular",
+    "template": "Unpopular opinion:\n\n{opinion}\n\nBefore you disagree:\n{reasoning}\n\n{cta}",
+    "variables": ["opinion", "reasoning", "cta"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_this_or_that",
+    "template": "{option_a} or {option_b}?\n\nMy pick: {pick}\n\nReason: {reason}\n\n♻️ RT with your choice",
+    "variables": ["option_a", "option_b", "pick", "reason"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_list_rank",
+    "template": "Rank these (hardest first):\n\n1. {item_1}\n2. {item_2}\n3. {item_3}\n4. {item_4}\n\nMy ranking: {ranking}\n\nWhat's yours? 👇",
+    "variables": ["item_1", "item_2", "item_3", "item_4", "ranking"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_controversial",
+    "template": "Controversial but true:\n\n{statement}\n\n{evidence}\n\nI know this will get hate.\n\nBut it needs to be said.\n\n{hashtag}",
+    "variables": ["statement", "evidence", "hashtag"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_confession",
+    "template": "Dev confession:\n\n{confession}\n\nNo shame.\n\nWho else? 🙋",
+    "variables": ["confession"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_tier_list",
+    "template": "{category} tier list:\n\nS: {s_tier}\nA: {a_tier}\nB: {b_tier}\nC: {c_tier}\n\nYour turn. Drop yours 👇",
+    "variables": ["category", "s_tier", "a_tier", "b_tier", "c_tier"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_overrated",
+    "template": "Most overrated in tech right now:\n\n{overrated}\n\nMost underrated:\n\n{underrated}\n\n{reasoning}\n\nAgree? 🤔",
+    "variables": ["overrated", "underrated", "reasoning"],
+    "pillar": "hot_takes"
+  },
+  {
+    "id": "engage_would_you_rather",
+    "template": "Would you rather:\n\nA) {option_a}\nB) {option_b}\n\nI'm going {pick} every time.\n\n{reason}\n\nDrop A or B 👇",
+    "variables": ["option_a", "option_b", "pick", "reason"],
+    "pillar": "hot_takes"
+  }
+]

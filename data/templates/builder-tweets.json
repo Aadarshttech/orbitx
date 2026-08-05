@@ -1,0 +1,26 @@
+[
+  {
+    "id": "builder_1",
+    "template": "A lot of people ask how I broke into AI research as an undergrad at Kathmandu University. My playbook:\n\nBuild in public. I shipped 'Smart NID Helper' to solve a real local problem (Nepal NID forms) and documented the whole process. Don't just research; deploy.\n\nWhat are you currently building?"
+  },
+  {
+    "id": "builder_2",
+    "template": "Low-resource NLP doesn't get enough attention, but it's where the real impact is.\n\nFor our CHiPSAL 2026 paper, we used a Random Forest reward model to filter 68 hours of noisy Nepali speech, cutting Whisper's WER by 11%.\n\nYou don't always need more compute. Sometimes you just need cleaner data."
+  },
+  {
+    "id": "builder_3",
+    "template": "My biggest realization as the AI Lead at Kurly Brains:\n\nClients don't care about the size of your LLM. They care if the WordPress chatbot actually answers their customer's specific question without hallucinating.\n\nStop chasing model sizes. Start chasing pipeline reliability."
+  },
+  {
+    "id": "builder_4",
+    "template": "The \"Prompting Is Not Adaptation\" paper we submitted to ICON 2026 taught me a hard lesson.\n\nWhen evaluating audio-language models for Nepali ASR, prompting them just couldn't match true language adaptation. \n\nFine-tuning is still king for low-resource languages. Don't let the zero-shot hype fool you."
+  },
+  {
+    "id": "builder_5",
+    "template": "Building an end-to-end ML system is 80% data and deployment, 20% modeling.\n\nWhen I built the Drone Image Landcover Segmentation pipeline, training DeepLab v3 in PyTorch was the easiest part. GIS preprocessing? Absolute nightmare.\n\nLearn the plumbing, not just the math."
+  },
+  {
+    "id": "builder_6",
+    "template": "Accessibility tech is why I love computer vision.\n\nI built a real-time Webcam Eye-Tracking system using MediaPipe and Ridge Regression so users with severe motor disabilities can control their OS hands-free.\n\nTech at its best empowers people. What problem are you solving?"
+  }
+]
