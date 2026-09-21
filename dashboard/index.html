@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrbitX — Orbital Command</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Background Grid -->
+  <div class="hud-grid-background"></div>
+
+  <div class="dashboard">
+    <!-- Header -->
+    <header class="header hud-panel">
+      <div class="header-left">
+        <div class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+            <polygon points="12 2 2 22 12 18 22 22 12 2"></polygon>
+          </svg>
+        </div>
+        <div class="header-titles">
+          <h1>ORBITX <span class="badge-version">v1.0</span></h1>
+          <p class="subtitle">TELEMETRY_LINK: ORBITAL_DAEMON</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="hud-readout success" id="schedulerStatus">
+          <span class="status-indicator active"></span>
+          <span class="readout-label">SYSTEM_STATUS</span>
+          <span class="readout-value">ONLINE</span>
+        </div>
+        <div class="hud-readout alert">
+          <span class="readout-label">API_BURN_RATE</span>
+          <span class="readout-value">$0.00</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-panel hud-panel">
+        <div class="stat-header">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span class="stat-label">T-PLUS</span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-value" id="campaignDay">01</div>
+          <div class="stat-unit" id="campaignTotalDays">/100</div>
+        </div>
+        <div class="stat-footer">CAMPAIGN_DAY</div>
+      </div>
+
+      <div class="stat-panel hud-panel">
+        <div class="stat-header">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span class="stat-label">EXECUTED</span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-value" id="totalPosted">00</div>
+        </div>
+        <div class="stat-footer">POSTS_PUBLISHED</div>
+      </div>
+
+      <div class="stat-panel hud-panel">
+        <div class="stat-header warning">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <span class="stat-label">BUFFER</span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-value warning-text" id="queuePending">00</div>
+        </div>
+        <div class="stat-footer">IN_QUEUE</div>
+      </div>
+
+      <div class="stat-panel hud-panel">
+        <div class="stat-header accent">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline></svg>
+          <span class="stat-label">VELOCITY</span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-value accent-text" id="streak">00</div>
+        </div>
+        <div class="stat-footer">DAY_STREAK</div>
+      </div>
+    </div>
+
+    <!-- Main Content Row -->
+    <div class="content-row">
+      <!-- Progress Dial -->
+      <div class="hud-panel main-panel">
+        <div class="panel-header">
+          <h2>ORBITAL_PROGRESS</h2>
+          <div class="hud-corner-accent"></div>
+        </div>
+        <div class="progress-dial-container">
+          <div class="progress-dial">
+            <svg viewBox="0 0 200 200" class="dial-svg">
+              <defs>
+                <linearGradient id="thrustGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0055ff" />
+                  <stop offset="100%" stop-color="#00f0ff" />
+                </linearGradient>
+              </defs>
+              <!-- Background Track -->
+              <circle class="dial-track" cx="100" cy="100" r="80" />
+              <!-- Tick marks (visual only, handled by CSS mostly or SVG dashed) -->
+              <circle class="dial-ticks" cx="100" cy="100" r="92" stroke-dasharray="2 6" />
+              <!-- Progress Fill -->
+              <circle class="dial-fill" id="progressCircle" cx="100" cy="100" r="80" />
+            </svg>
+            <div class="dial-readout">
+              <span class="dial-value" id="progressPercent">00%</span>
+              <span class="dial-label">COMPLETED</span>
+            </div>
+          </div>
+        </div>
+        <div class="telemetry-data">
+          <div class="data-row">
+            <span class="data-key">SYS_START:</span>
+            <span class="data-val" id="startDate">--</span>
+          </div>
+          <div class="data-row">
+            <span class="data-key">EST_APOGEE:</span>
+            <span class="data-val" id="endDate">--</span>
+          </div>
+          <div class="data-row">
+            <span class="data-key">LAST_TX:</span>
+            <span class="data-val" id="lastPosted">--</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar Analytics -->
+      <div class="hud-panel main-panel">
+        <div class="panel-header">
+          <h2>CONTENT_VECTOR_ANALYSIS</h2>
+          <div class="hud-corner-accent"></div>
+        </div>
+        <div class="vector-list" id="pillarList">
+          
+          <div class="vector-item">
+            <div class="vector-labels">
+              <span class="vector-name">AI/ML_INSIGHTS</span>
+              <span class="vector-count">00</span>
+            </div>
+            <div class="vector-bar-container">
+              <div class="vector-bar fill-cyan" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="vector-item">
+            <div class="vector-labels">
+              <span class="vector-name">DEV_TIPS</span>
+              <span class="vector-count">00</span>
+            </div>
+            <div class="vector-bar-container">
+              <div class="vector-bar fill-blue" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="vector-item">
+            <div class="vector-labels">
+              <span class="vector-name">LEARNING_JOURNEY</span>
+              <span class="vector-count">00</span>
+            </div>
+            <div class="vector-bar-container">
+              <div class="vector-bar fill-purple" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="vector-item">
+            <div class="vector-labels">
+              <span class="vector-name">HOT_TAKES</span>
+              <span class="vector-count">00</span>
+            </div>
+            <div class="vector-bar-container">
+              <div class="vector-bar fill-orange" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <div class="vector-item">
+            <div class="vector-labels">
+              <span class="vector-name">AMBASSADOR</span>
+              <span class="vector-count">00</span>
+            </div>
+            <div class="vector-bar-container">
+              <div class="vector-bar fill-green" style="width: 0%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Feed Section (Queue + History) -->
+    <div class="feed-row">
+      <!-- Queue -->
+      <div class="hud-panel list-panel">
+        <div class="panel-header">
+          <div class="header-group">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <h2>BUFFER_QUEUE</h2>
+          </div>
+          <span class="counter-badge" id="queueBadge">00 PENDING</span>
+        </div>
+        <div class="feed-container" id="queueList">
+          <div class="hud-empty">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><path d="M12 12h.01"></path></svg>
+            <p>BUFFER EMPTY</p>
+            <p class="hud-hint">EXECUTE <span>npm run generate</span> TO REFILL</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- History -->
+      <div class="hud-panel list-panel">
+        <div class="panel-header">
+          <div class="header-group">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <h2>TRANSMISSION_LOG</h2>
+          </div>
+        </div>
+        <div class="feed-container" id="historyList">
+          <div class="hud-empty">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            <p>NO TRANSMISSIONS DETECTED</p>
+            <p class="hud-hint">EXECUTE <span>npm run post</span> TO INITIATE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="hud-modal-overlay">
+    <div class="hud-modal">
+      <div class="panel-header">
+        <h2>EDIT_TRANSMISSION</h2>
+        <button id="closeModalBtn" class="hud-btn-close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea id="editTweetText" class="hud-textarea"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="saveTweetBtn" class="hud-btn primary">COMMIT_CHANGES</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
