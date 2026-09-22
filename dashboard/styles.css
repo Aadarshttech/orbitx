@@ -657,3 +657,5 @@ body {
 .hud-btn.primary:hover {
   background: var(--thrust-glow);
 }
+
+/* High-contrast telemetry accents for low-DPI displays */
