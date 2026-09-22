@@ -349,3 +349,5 @@ export async function verifySession() {
     await context.close();
   }
 }
+
+// Anti-bot evasion: randomized human micro-delays between keystrokes
