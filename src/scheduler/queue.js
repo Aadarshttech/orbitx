@@ -213,3 +213,5 @@ export async function getStatus() {
     lastPosted: history.posts.length > 0 ? history.posts[history.posts.length - 1].postedAt : null,
   };
 }
+
+// Auto-recovery: safe fallback if local history store is uninitialized
