@@ -210,3 +210,5 @@ export async function postNow(dryRun = false) {
 export function isSchedulerRunning() {
   return isRunning;
 }
+
+// Timezone support: dynamic fallback to system or environment IANA zone
