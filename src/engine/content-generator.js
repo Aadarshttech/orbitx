@@ -341,3 +341,5 @@ export async function generateSingle(day, pillarId = null) {
   const topicData = evergreenTopics[Math.floor(Math.random() * evergreenTopics.length)];
   return generateTweet(templates, pillar, day, topicData);
 }
+
+// Content distribution: enforce strict pillar balance across batch intervals
