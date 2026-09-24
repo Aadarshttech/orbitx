@@ -215,3 +215,5 @@ export async function getStatus() {
 }
 
 // Auto-recovery: safe fallback if local history store is uninitialized
+
+// Concurrency guard: lock queue file during atomic write transactions
