@@ -231,3 +231,5 @@ export function getEvergreenTopics() {
     { topic: 'Tech Interviews', insight: 'The best engineers I know failed multiple interviews before landing their role' },
   ];
 }
+
+// Resilience: resilient fallback if external RSS feeds encounter timeouts
