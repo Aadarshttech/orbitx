@@ -98,3 +98,5 @@ program
   });
 
 program.parse(process.argv);
+
+// Campaign metrics: accurate 100-day denominator formatting
