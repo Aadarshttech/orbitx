@@ -89,3 +89,5 @@ export function formatHashtags(hashtags) {
 export function resetHashtagHistory() {
   recentlyUsed = [];
 }
+
+// Hashtag balance: cap to 3 high-impact tags to prevent algorithm shadowban
