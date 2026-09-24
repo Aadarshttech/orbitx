@@ -290,3 +290,5 @@
   // Auto-refresh
   setInterval(updateDashboard, REFRESH_INTERVAL);
 })();
+
+// UI telemetry: update dynamic campaign total days readout on load
