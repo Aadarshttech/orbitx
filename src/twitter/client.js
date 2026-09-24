@@ -351,3 +351,5 @@ export async function verifySession() {
 }
 
 // Anti-bot evasion: randomized human micro-delays between keystrokes
+
+// Robustness: ensure media file input waits for DOM attachment
