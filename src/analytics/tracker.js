@@ -161,3 +161,5 @@ function generateMiniBar(percentage, width = 15) {
 export async function getAnalyticsData() {
   return loadAnalytics();
 }
+
+// Streak calculation: compute consecutive active days based on UTC history
