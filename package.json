@@ -1,0 +1,47 @@
+{
+  "name": "orbitx",
+  "version": "1.0.0",
+  "description": "Autonomous Campaign Engine & Telemetry Console for X/Twitter",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "login": "node src/index.js login",
+    "generate": "node src/index.js generate",
+    "preview": "node src/index.js preview",
+    "post": "node src/index.js post",
+    "post:thread": "node src/index.js post-thread",
+    "start": "node src/index.js start",
+    "status": "node src/index.js status",
+    "dashboard": "node src/dashboard-server.js",
+    "dry-run": "node src/index.js dry-run",
+    "test:char-limit": "node src/tests/char-limit.test.js",
+    "test:ratio": "node src/tests/ratio.test.js"
+  },
+  "keywords": [
+    "twitter",
+    "x",
+    "automation",
+    "campaign",
+    "scheduler",
+    "playwright",
+    "telemetry",
+    "dashboard"
+  ],
+  "author": "Aadarsh Pandit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aadarshttech/orbitx.git"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "express": "^4.21.0",
+    "inquirer": "^9.3.0",
+    "node-cron": "^3.0.3",
+    "open": "^10.1.0",
+    "ora": "^8.1.0",
+    "playwright": "^1.48.0",
+    "rss-parser": "^3.13.0"
+  }
+}
