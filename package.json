@@ -13,7 +13,8 @@
     "start": "node src/index.js start",
     "status": "node src/index.js status",
     "dashboard": "node src/dashboard-server.js",
-    "dry-run": "node src/index.js dry-run",
+    "dry-run": "node src/index.js start --dry-run",
+    "post:dry-run": "node src/index.js post --dry-run",
     "test:char-limit": "node src/tests/char-limit.test.js",
     "test:ratio": "node src/tests/ratio.test.js"
   },
