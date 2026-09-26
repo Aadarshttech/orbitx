@@ -117,6 +117,42 @@ Navigate to `http://localhost:3847` to access your mission control interface:
 
 ---
 
+## 🔐 Security
+
+OrbitX stores sensitive session data locally. Follow these hardening steps to keep your setup secure:
+
+| Risk | Mitigation |
+| :--- | :--- |
+| **`.env` secrets** | Never commit `.env` — it is already listed in `.gitignore`. Verify before every push. |
+| **Browser session data** | The `data/browser-session/` directory contains your authenticated cookies. Do not share or commit this directory. |
+| **Dashboard exposure** | The HUD console binds to `localhost` by default. Avoid exposing port `3847` to public networks. |
+| **Dependency supply-chain** | Pin dependency versions in `package-lock.json` and audit regularly with `npm audit`. |
+
+### Rotating Your Session
+
+If you suspect your session has been compromised:
+
+```bash
+# Delete the persisted browser session
+rm -rf data/browser-session/
+
+# Re-authenticate
+npm run login
+```
+
+---
+
+## ❓ Troubleshooting
+
+| Symptom | Fix |
+| :--- | :--- |
+| `Chromium not found` | Run `npx playwright install chromium` to install the bundled browser. |
+| Dashboard won't start | Ensure port `3847` is free, or change `DASHBOARD_PORT` in `.env`. |
+| Posts fail silently | Check `data/logs/` for error output. X's DOM may have changed — update selectors. |
+| Scheduler skips windows | Verify `TIMEZONE` in `.env` matches your system timezone (use IANA format). |
+
+---
+
 ## 📄 License
 
 Distributed under the **MIT License**. See `LICENSE` for details.
