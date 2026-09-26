@@ -126,8 +126,11 @@ function getLocalDateString(date, timeZone = timezone) {
 
   // Show current status
   const status = await getStatus();
-  logger.info(`Campaign progress: Day ${status.campaignDay}/20 (${status.progress}%)`);
+  logger.info(`Campaign progress: Day ${status.campaignDay}/${status.totalDays || 100} (${status.progress}%)`);
   logger.info(`Queue: ${status.queuePending} tweets pending`);
+  if (status.totalPosted >= 100) {
+    logger.success('🎉 100 Days Campaign is 100% Complete! All posts have been successfully published.');
+  }
   logger.info('');
   logger.info('Press Ctrl+C to stop the scheduler');
 
