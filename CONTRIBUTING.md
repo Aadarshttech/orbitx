@@ -2,6 +2,10 @@
 
 First off, thank you for considering contributing to OrbitX! It's people like you who make open source such a powerful tool for developers.
 
+## Code of Conduct
+
+This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+
 ## How Can I Contribute?
 
 ### 1. Reporting Bugs
@@ -29,7 +33,45 @@ First off, thank you for considering contributing to OrbitX! It's people like yo
 4. Commit your changes and push to your fork.
 5. Submit a Pull Request targeting `main`.
 
+## Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/Aadarshttech/orbitx.git
+cd orbitx
+
+# Install dependencies
+npm install
+
+# Install Playwright browser
+npx playwright install chromium
+
+# Copy environment config
+cp .env.example .env
+
+# Start the dashboard in development
+npm run dashboard
+```
+
+## Project Structure
+
+```
+orbitx/
+├── src/
+│   ├── index.js          # CLI entry point
+│   ├── scheduler/        # Cron-based scheduling engine
+│   ├── twitter/           # Playwright browser automation
+│   ├── dashboard-server.js # Express HUD telemetry server
+│   └── tests/            # Test suites
+├── config/               # Schedule and pillar configuration
+├── dashboard/            # Frontend HUD assets
+├── data/                 # Runtime data (logs, queue, sessions)
+└── docs/                 # Architecture documentation
+```
+
 ## Code Style
 - Keep codebase modular and free of external bloat.
 - Ensure all automated browser interactions include humanized intervals to prevent bot detection.
 - Maintain clean, descriptive commit messages.
+- Use ES module syntax (`import`/`export`) consistently.
+
